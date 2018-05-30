@@ -1,4 +1,13 @@
 <?php
+/**
+ * JsonApiSchema
+ *
+ * @link https://github.com/firzen/JsonApiSchema
+ * @copyright Copyright (c) 2018 fizen. {@link https://github.com/firzen}
+ * @license MIT
+ * @version $Id: q.php 1 2018-05-30 15:40:15Z firzen $
+ */
+
 class JsonApiSchema{
 	static $default_endpoint='http://endpoint';
 	private $apiDefineArray=array();
