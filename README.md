@@ -48,4 +48,32 @@ $schema=array(
  $jsonApiSchema->genDoc();
  ```
  
+效果图： https://prnt.sc/joepqq
+
+# 验证
+ ```php
+ $jsonApiSchema=new JsonApiSchema();
+ $jsonApiSchema->parse($schema);
+ $jsonApiSchema->validate(file_get_contents("php://input"));
+ ```
+ 
+ # 扩展
+ 
+ ## 验证类型扩展
+ ```php
+ class mySchema extends JsonApiSchema{
+  static function _validate_IPV4($value,$schema){
+    $test = @ip2long($value);
+    return $test !== - 1 && $test !== false;
+  }
+  static function _sample_IPV$($value){
+    return '120.25.52.130';
+  }
+ }
+ ```
+
+```php
+  'field'=>'ipv4,IP 地址',
+```
+
  
